@@ -7,11 +7,11 @@
 		<meta charset="UTF-8">
 		<title>관리자 공연 리스트 페이지</title>
 		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>
+		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="<c:url value='/js/performanceDetailView.js'/>"></script>
 	</head>
 	<body>
 		<div class="wrapper">
-			<c:import url="/WEB-INF/views/admin/adminMenu.jsp"/>
 			<div>
 				<h3>공연 관리</h3>
 				<button class="newPerformance" onclick="location.href='/admin/newPerformanceForm'">신규 공연 등록</button>
@@ -37,7 +37,7 @@
 									<td>${performance.performanceId}</td>
 									<td>${performance.performanceName}</a></td>
 									<td>${performance.performanceKindCd}</td>
-									<td>${performance.firstChangeDate}</td>
+									<td><fmt:formatDate value="${performance.firstChangeDate}" pattern="YYYY-MM-dd"/></td>
 								</tr>
 							</c:forEach>
 						</c:otherwise>

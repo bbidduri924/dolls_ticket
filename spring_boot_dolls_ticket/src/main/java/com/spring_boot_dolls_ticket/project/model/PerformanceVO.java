@@ -15,9 +15,12 @@ public class PerformanceVO {
 	private String performanceZipcode;
 	private String performanceAddress;
 	private String performanceDetailAddress;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date performanceDate1;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date performanceDate2;
 	private int performanceTime;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date reservationOpenExpectedDate;
 	private String performanceImagePath;
 	private String performanceInformationImagePath;

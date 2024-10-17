@@ -7,19 +7,17 @@
 		<meta charset="UTF-8">
 		<title>관리자 공연 정보 수정 페이지</title>
 		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>
+		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="<c:url value='/js/searchZip.js'/>"></script>
 	</head>
 	<body>
 		<div class="wrapper">
-			<c:import url="/WEB-INF/views/admin/adminMenu.jsp"/>
 			<h3>${performance.performanceName} 정보 수정</h3>
+			<p>등록일 : ${performance.firstChangeDate}</p>
+			<p>마지막 수정일 : ${performance.lastChangeDate}</p>
 			<form method="post" action="<c:url value='/admin/updatePerformance'/>">
 				<table>
-					<tr>
-						<th>공연 등록 ID</th>
-						<td><input type="text" name="performanceId" id="performanceId" value="${performance.performanceId}" readonly></td>
-					</tr>
 					<tr>
 						<th>공연 이름</th>
 						<td><input type="text" name="performanceName" id="performanceName" value="${performance.performanceName}"></td>
@@ -28,14 +26,14 @@
 						<th>공연 종류</th>
 						<td>
 							<select name="performanceKindCd">
-								<option value="콘서트">콘서트</option>
-								<option value="뮤지컬">뮤지컬</option>
+								<option value="C">콘서트</option>
+								<option value="M">뮤지컬</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<th>공연 일시1</th>
-						<td><input type="date" name="performanceDate" id="performanceDate" value="<fmt:formatDate value="${performance.performanceDate}" pattern="YYYY-MM-dd"/>"></td>
+						<td><input type="date" name="performanceDate1" id="performanceDate1" value="<fmt:formatDate value="${performance.performanceDate1}" pattern="YYYY-MM-dd"/>"></td>
 					</tr>
 					<tr>
 						<th>공연 일시2</th>
@@ -63,7 +61,7 @@
 							<input type="text" id="performanceZipcode" name="performanceZipcode" size="5" value="${performance.performanceZipcode}" readonly>
 							<input type="button" id="searchZipBtn" name="searchZipBtn" value="우편 번호 찾기"><br>
 							<input type="text" id="performanceAddress" name="performanceAddress" placeholder="주소 입력" size="70" value="${performance.performanceAddress}" readonly><br>
-							<input type="text" id="performanceDetailaddress" name="performanceDetailaddress" placeholder="상세 주소 입력" size="70" value="${performance.performanceDetailaddress}">
+							<input type="text" id="performanceDetailaddress" name="performanceDetailaddress" placeholder="상세 주소 입력" size="70" value="${performance.performanceDetailAddress}">
 						</td>
 					</tr>
 					<tr>

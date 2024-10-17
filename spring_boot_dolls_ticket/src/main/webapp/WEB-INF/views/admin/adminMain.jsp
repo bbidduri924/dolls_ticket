@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>관리자 메인 페이지</title>
-		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>		   	
+		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>
+		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="<c:url value='/js/performanceDetailView.js'/>"></script>
 	</head>
 	<body>
 		<div class="wrapper">
-			<c:import url="/WEB-INF/views/admin/adminMenu.jsp"/>
 			<div>
 				<h3><a href="/admin/performanceList">공연 관리</a></h3>
 				<table id="performanceTable">
@@ -35,7 +36,7 @@
 										<td>${performance.performanceId}</td>
 										<td>${performance.performanceName}</td>
 										<td>${performance.performanceKindCd}</td>
-										<td>${performance.firstChangeDate}</td>
+										<td><fmt:formatDate value="${performance.firstChangeDate}" pattern="yyyy-MM-dd"/></td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>

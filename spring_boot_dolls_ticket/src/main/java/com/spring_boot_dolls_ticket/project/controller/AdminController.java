@@ -91,6 +91,8 @@ public class AdminController {
 		
 		performanceService.insertPerformance(performance);
 		
+		System.out.println("Inserted Performance ID: " + performance.getPerformanceId());
+		
 		return "redirect:/admin/performanceList";
 		
 	}
