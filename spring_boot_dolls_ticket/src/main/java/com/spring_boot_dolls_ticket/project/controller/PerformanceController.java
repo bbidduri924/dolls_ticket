@@ -24,5 +24,11 @@ public class PerformanceController {
 		return "performance/performanceDetail";
 	}
 	
+	@RequestMapping("/performance/writeReview")
+	public String writeReview() {
+		
+		return "performance/writeReview";
+		
+	}
 	
 }
