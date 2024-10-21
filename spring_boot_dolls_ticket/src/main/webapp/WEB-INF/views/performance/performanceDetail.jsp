@@ -147,11 +147,53 @@
 				<p class="dt05-tit">관람후기</p>
 				<div class="write">
 					<c:if test="${sessionScope.sid == null}">
-						<a onclick="alert('로그인이 필요합니다.')"><span>후기 작성하기</span></a>
+						<a onclick="alert('로그인이 필요합니다.')">
+						<input type="checkbox" id="layer_popup">
+						<label for="layer_popup">후기 작성하기</label></a>
 					</c:if>
 					<c:if test="${sessionScope.sid != null}">
-						<a href="" onclick="openPopup()"><span>후기 작성하기</span></a>
+						<input type="checkbox" id="layer_popup">
+						<label for="layer_popup">후기 작성하기</label>
 					</c:if>
+					<div id="layer_bg">
+						<div id="popup">
+							<h2>
+								${pfm.performanceName} <label for="layer_popup">X</label>
+							</h2>
+							<div class="star-rating">
+								<p class="star-tit">별점</p>
+								<div class="star-box">
+									<a href="#"><img src="<c:url value='/image/icons8-star-48-off.png'/>"></a>
+									<a href="#"><img src="<c:url value='/image/icons8-star-48-off.png'/>"></a>
+									<a href="#"><img src="<c:url value='/image/icons8-star-48-off.png'/>"></a>
+									<a href="#"><img src="<c:url value='/image/icons8-star-48-off.png'/>"></a>
+									<a href="#"><img src="<c:url value='/image/icons8-star-48-off.png'/>"></a>
+								</div>
+							</div>
+							<div class="write-area">
+								<p class="w-tit">관람후기</p>
+								<div class="w-write-box">
+									<textarea id="txtReview"
+										placeholder="내용을 작성해주세요. (최소 20byte / 최대 2,000byte)"></textarea>
+								</div>
+							</div>
+							<div class="write-caution">
+								<p class="w-caution-tit">관람후기 작성 시 유의사항</p>
+								<p class="w-caution-txt">FIVEDOLLS 게시판 운영 규정에 위반된다고 판단되는 글은
+									사전고지 없이 삭제될 수 있습니다.</p>
+								<ul class="w-caution-list">
+									<li>티켓 매매 및 양도, 교환의 글</li>
+									<li>전화번호, 이메일, 주소 등 회원 및 타인의 개인정보 유출이 우려되는 경우</li>
+									<li>욕설, 비방, 도배성 글을 작성한 경우</li>
+									<li>명예훼손, 저작권, 초상권의 권리 침해 및 음란한 사진을 게재한 경우</li>
+								</ul>
+							</div>
+							<div class="write-btns">
+								<button type="submit" id="insertReview">등록</button>
+								<button type="button" id="cancellation">취소</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="rev-container">
 					<ul class="review">
@@ -185,7 +227,7 @@
 						</li>
 						<li>
 							<div class="writerBox">
-								<span class="writerId">ehdwn0***</span> <span class="writeDate">2024.10.15</span>
+								<span class="writerId">ehd***</span> <span class="writeDate">2024.10.15</span>
 								<span class="reviewGrade"> <img
 									src="<c:url value='/image/icons8-star-16.png'/>"> <img
 									src="<c:url value='/image/icons8-star-16.png'/>"> <img
