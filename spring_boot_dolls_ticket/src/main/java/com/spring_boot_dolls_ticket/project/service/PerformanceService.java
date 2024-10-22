@@ -38,10 +38,26 @@ public class PerformanceService implements IPerformanceService {
 	public ArrayList<PerformanceVO> listAllPerformance() {
 		return dao.listAllPerformance();
 	}
+	// 공연 정보 수정 및 이미지 업데이트
 	@Override
-	public void updatePerformance(PerformanceVO performance) {
-		dao.updatePerformance(performance);
-	}
+    public void updatePerformance(PerformanceVO performance, MultipartFile performancePoster, MultipartFile performanceInfoImg) throws IOException {
+        // 공연 정보 수정
+		System.out.println("Performance ID: " + performance.getPerformanceId());
+		System.out.println("Performance Name: " + performance.getPerformanceName());
+        dao.updatePerformance(performance);
+
+        // 이미지 파일 경로 설정
+        String performanceId = performance.getPerformanceId();
+        String posterPath = performanceId + ".jpg";
+        String infoImgPath = performanceId + "_info.jpg";
+
+        // 이미지 파일 저장
+        saveFile(performancePoster, posterPath);
+        saveFile(performanceInfoImg, infoImgPath);
+        System.out.println(posterPath);
+        System.out.println(infoImgPath);
+
+    }
 	@Override
 	public void deletePerformance(String performanceId) {
 		dao.deletePerformance(performanceId);
@@ -62,8 +78,8 @@ public class PerformanceService implements IPerformanceService {
         String infoImgPath = performanceId + "_info.jpg";
 
         // 이미지 경로 VO에 설정
-        performance.setPerformanceImagePath("/static/image/" + posterPath);
-        performance.setPerformanceInformationImagePath("/static/image/" + infoImgPath);
+        performance.setPerformanceImagePath(posterPath);
+        performance.setPerformanceInformationImagePath(infoImgPath);
 
         // 이미지 파일 저장
         saveFile(performancePoster, posterPath);

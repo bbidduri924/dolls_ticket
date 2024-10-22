@@ -1,14 +1,11 @@
 package com.spring_boot_dolls_ticket.project.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,11 +69,11 @@ public class AdminController {
 	}
 	// 관리자 공연 정보 수정 처리
 	@RequestMapping("/admin/updatePerformance")
-	public String updatePerformance(PerformanceVO performance) {
-		
-		performanceService.updatePerformance(performance);
-		
-		return "redirect:/admin/performanceList";
+	public String updatePerformance(@ModelAttribute PerformanceVO performance, @RequestParam("performancePoster") MultipartFile performancePoster, @RequestParam("performanceInfoImg") MultipartFile performanceInfoImg) throws IllegalStateException, IOException {
+	
+        performanceService.updatePerformance(performance, performancePoster, performanceInfoImg);
+       
+        return "redirect:/admin/performanceList";  // 공연 목록 페이지로 리다이렉트
 		
 	}
 	// 관리자 특정 공연 정보 삭제 처리

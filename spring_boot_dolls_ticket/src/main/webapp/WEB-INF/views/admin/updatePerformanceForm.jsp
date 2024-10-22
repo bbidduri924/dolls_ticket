@@ -9,15 +9,7 @@
 		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>
 		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-		<script>
-		    $(document).ready(function() {
-		        $('.resetBtn').on('click', function(event) {
-		            if (!confirm("정말 취소하겠습니까?")) {
-		                event.preventDefault();
-		            }
-		        });
-		    });
-		</script>
+		<script src="<c:url value='/js/updatePerformance.js'/>"></script>
 		<script src="<c:url value='/js/searchZip.js'/>"></script>
 	</head>
 	<body>
@@ -25,17 +17,35 @@
 			<h3>${performance.performanceName} 정보 수정</h3>
 			<p>등록일 : <fmt:formatDate value="${performance.firstChangeDate}" pattern="yyyy-MM-dd"/></p>
 			<p>마지막 수정일 : <fmt:formatDate value="${performance.lastChangeDate}" pattern="yyyy-MM-dd"/></p>
-			<form id="updatePerformanceForm" method="post" action="<c:url value='/admin/updatePerformance'/>">
+			<form id="updatePerformanceForm" method="POST" action="<c:url value='/admin/updatePerformance'/>" enctype="multipart/form-data">
 				<input type="hidden" name="performanceId" value="${performance.performanceId}">
 				<table class="listTable">
 					<tr>
 						<th>공연 ID</th>
-						<td><input type="text" name="performanceId" id="performanceId" value="${performance.performanceId}" readonly></td>
+						<td>${performance.performanceId}</td>
 					</tr>
 					<tr>
 						<th>공연 이름</th>
 						<td><input type="text" name="performanceName" id="performanceName" value="${performance.performanceName}"></td>
 					</tr>
+					<tr>
+	                    <th>공연 포스터</th>
+	                    <td>
+	                        <img id="posterPreview" src="<c:url value='/image/${performance.performanceId}.jpg'/>" 
+	                             alt="포스터 미리 보기" style="max-width: 300px; display: block;">
+	                        <input type="file" name="performancePoster" id="performancePoster">
+	                        <button type="button" class="deleteImageBtn">삭제</button>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>공연 정보 이미지</th>
+	                    <td>
+	                        <img id="infoPreview" src="<c:url value='/image/${performance.performanceId}_info.jpg'/>" 
+	                             alt="정보 이미지 미리 보기" style="max-width: 300px; display: block;">
+	                        <input type="file" name="performanceInfoImg" id="performanceInfoImg">
+	                        <button type="button" class="deleteImageBtn">삭제</button>
+	                    </td>
+	                </tr>
 					<tr>
 						<th>공연 종류</th>
 						<td>
@@ -54,6 +64,10 @@
 						<td><input type="date" name="performanceDate2" id="performanceDate2" value="<fmt:formatDate value="${performance.performanceDate2}" pattern="YYYY-MM-dd"/>"></td>
 					</tr>
 					<tr>
+						<th>관람 소요 시간</th>
+						<td>총 <input type="text" name="performanceTime" value="${performance.performanceTime}">분</td>
+					</tr>
+					<tr>
 						<th>R석 가격</th>
 						<td><input type="text" name="performancePriceR" id="performancePriceR" value="${performance.performancePriceR}">원</td>
 					</tr>
@@ -64,10 +78,6 @@
 					<tr>
 						<th>관람 등급</th>
 						<td><input type="text" name="performanceRatingCode" id="performanceRatingCode" value="${performance.performanceRatingCode}">세 이상</td>
-					</tr>
-					<tr>
-						<th>관람 시간</th>
-						<td>총 <input type="text" name="performanceTime" id="performanceTime" value="${performance.performanceTime}">분</td>
 					</tr>
 					<tr>
 						<th>주소</th>

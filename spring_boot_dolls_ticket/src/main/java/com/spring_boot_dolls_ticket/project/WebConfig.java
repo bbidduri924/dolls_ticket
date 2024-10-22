@@ -9,8 +9,8 @@ public class WebConfig implements WebMvcConfigurer{
 
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/ticket_images/**").addResourceLocations("file:///Users/dlwlgus/springBootWorkspace/ticket_images/");
-		registry.addResourceHandler("/image/**").addResourceLocations("file:///Users/dlwlgus/springBootWorkspace/upload/"); // 한 개 절대 경로에 여러 url 매핑 가능
+		registry.addResourceHandler("/image/**") // URL 경로
+        		.addResourceLocations("classpath:/static/image/"); // 실제 파일 경로
     }
 	
 }

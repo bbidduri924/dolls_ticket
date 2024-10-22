@@ -5,7 +5,6 @@ body, html {
 }
 .wrapper {
 	width: 940px;
-	min-height: 100%;
 }
 .listTable {
 	border: 1px solid black;
