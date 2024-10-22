@@ -28,7 +28,11 @@
 				<div class="poster">
 					<img src="<c:url value='/image/${performance.performanceImagePath}'/>">
 				</div>
-				<table>
+				<table class="listTable">
+					<tr>
+						<th>공연 ID</th>
+						<td>${performance.performanceId}</td>
+					</tr>
 					<tr>
 						<th>공연 이름</th>
 						<td>${performance.performanceName}</td>
@@ -71,7 +75,7 @@
 					</tr>
 					<tr>
 						<th>티켓 오픈 일자</th>
-						<td>${performance.reservationOpenExpectedDate}</td>
+						<td><fmt:formatDate value="${performance.reservationOpenExpectedDate}" pattern="yyyy-MM-dd"/></td>
 					</tr>
 				</table>
 				<div>

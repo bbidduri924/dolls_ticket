@@ -9,15 +9,29 @@
 		<c:import url="/WEB-INF/views/layout/adminHead.jsp"/>
 		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+		<script>
+		    $(document).ready(function() {
+		        $('.resetBtn').on('click', function(event) {
+		            if (!confirm("정말 취소하겠습니까?")) {
+		                event.preventDefault();
+		            }
+		        });
+		    });
+		</script>
 		<script src="<c:url value='/js/searchZip.js'/>"></script>
 	</head>
 	<body>
 		<div class="wrapper">
 			<h3>${performance.performanceName} 정보 수정</h3>
-			<p>등록일 : ${performance.firstChangeDate}</p>
-			<p>마지막 수정일 : ${performance.lastChangeDate}</p>
-			<form method="post" action="<c:url value='/admin/updatePerformance'/>">
-				<table>
+			<p>등록일 : <fmt:formatDate value="${performance.firstChangeDate}" pattern="yyyy-MM-dd"/></p>
+			<p>마지막 수정일 : <fmt:formatDate value="${performance.lastChangeDate}" pattern="yyyy-MM-dd"/></p>
+			<form id="updatePerformanceForm" method="post" action="<c:url value='/admin/updatePerformance'/>">
+				<input type="hidden" name="performanceId" value="${performance.performanceId}">
+				<table class="listTable">
+					<tr>
+						<th>공연 ID</th>
+						<td><input type="text" name="performanceId" id="performanceId" value="${performance.performanceId}" readonly></td>
+					</tr>
 					<tr>
 						<th>공연 이름</th>
 						<td><input type="text" name="performanceName" id="performanceName" value="${performance.performanceName}"></td>
@@ -61,7 +75,7 @@
 							<input type="text" id="performanceZipcode" name="performanceZipcode" size="5" value="${performance.performanceZipcode}" readonly>
 							<input type="button" id="searchZipBtn" name="searchZipBtn" value="우편 번호 찾기"><br>
 							<input type="text" id="performanceAddress" name="performanceAddress" placeholder="주소 입력" size="70" value="${performance.performanceAddress}" readonly><br>
-							<input type="text" id="performanceDetailaddress" name="performanceDetailaddress" placeholder="상세 주소 입력" size="70" value="${performance.performanceDetailAddress}">
+							<input type="text" id="performanceDetailAddress" name="performanceDetailAddress" placeholder="상세 주소 입력" size="70" value="${performance.performanceDetailAddress}">
 						</td>
 					</tr>
 					<tr>
@@ -70,7 +84,7 @@
 					</tr>
 				</table><br>
 				<input type="submit" value="수정 완료">
-				<input type="reset" value="수정 취소">
+				<input type="reset" value="수정 취소" class="resetBtn">
 			</form>
 			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 		</div>

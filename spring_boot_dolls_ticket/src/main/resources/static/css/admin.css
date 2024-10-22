@@ -5,5 +5,13 @@ body, html {
 }
 .wrapper {
 	width: 940px;
-	margin-left: 200px;
+	min-height: 100%;
+}
+.listTable {
+	border: 1px solid black;
+	width: 100%;
+}
+.listTable th, .listTable td {
+	text-align: left;
+	border: 1px solid black;
 }

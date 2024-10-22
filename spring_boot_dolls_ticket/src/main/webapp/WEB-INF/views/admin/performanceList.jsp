@@ -15,7 +15,7 @@
 			<div>
 				<h3>공연 관리</h3>
 				<button class="newPerformance" onclick="location.href='/admin/newPerformanceForm'">신규 공연 등록</button>
-				<table id="performanceTable">
+				<table class="listTable"">
 					<thead>
 						<tr>
 							<th>공연 ID</th>
@@ -35,7 +35,7 @@
 							<c:forEach items="${performanceList}" var="performance">
 								<tr id="${performance.performanceId}" class="performanceRow" style="cursor:pointer">
 									<td>${performance.performanceId}</td>
-									<td>${performance.performanceName}</a></td>
+									<td>${performance.performanceName}</td>
 									<td>${performance.performanceKindCd}</td>
 									<td><fmt:formatDate value="${performance.firstChangeDate}" pattern="YYYY-MM-dd"/></td>
 								</tr>

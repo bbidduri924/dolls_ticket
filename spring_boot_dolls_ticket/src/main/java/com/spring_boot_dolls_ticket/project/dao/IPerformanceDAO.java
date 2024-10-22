@@ -12,5 +12,6 @@ public interface IPerformanceDAO {
 	void updatePerformance(PerformanceVO performance); // UPDATE - 공연 정보 수정
 	void deletePerformance(String performanceId); // DELETE - 공연 정보 삭제
 	void insertPerformance(PerformanceVO performance); // INSERT - 공연 정보 추가
-	
+	void updateImgPath(PerformanceVO performance);
+	String selectGeneratedId();
 }

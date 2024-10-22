@@ -10,31 +10,41 @@
 		<c:import url="/WEB-INF/views/layout/adminTop.jsp"/>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="<c:url value='/js/searchZip.js'/>"></script>
-		<script>
-			$(document).ready(function() {
-			    $('#searchZipBtn').on('click', function() {
-			        searchAddress('performanceZipcode', 'performanceAddress', 'performanceDetailaddress');
-			    });
-			});
-		</script>
+		<script src="<c:url value='/js/newPerformance.js'/>"></script>
+		<style>
+	        #posterPreview, #infoPreview {
+	            width: 300px;
+	            height: auto;
+	            margin-top: 10px;
+	            display: none;
+	        }
+		</style>
 	</head>
 	<body>
 		<div class="wrapper">
 			<h3>공연 정보 등록</h3>
-			<form method="post" action="<c:url value='/admin/insertPerformance'/>">
-				<table>
+			<form id="newPerformanceForm" method="POST" action="<c:url value='/admin/insertPerformance'/>" enctype="multipart/form-data">
+				<table class="listTable">
 					<tr>
 						<th>공연 이름</th>
 						<td><input type="text" name="performanceName"></td>
 					</tr>
 					<tr>
-<!-- 						<th>공연 포스터</th>
-						<td><input type="file" name="performanceImagePath"></td>
+						<th>공연 포스터</th>
+						<td>
+							<img id="posterPreview" alt="포스터 미리 보기" style="display:none; max-width: 300px; margin-top: 10px;"><br>
+							<input type="file" name="performancePoster" id="performancePoster"><br>
+							<button type="button" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
+						</td>
 					</tr>
 					<tr>
 						<th>공연 정보 이미지</th>
-						<td><input type="file" name="performanceInformationImagePath"></td>
-					</tr> -->
+						<td>
+							<img id="infoPreview" alt="정보 이미지 미리 보기" style="display:none; max-width: 300px; margin-top: 10px;"><br>
+							<input type="file" name="performanceInfoImg" id="performanceInfoImg"><br>
+							<button type="button" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
+						</td>
+					</tr>
 					<tr>
 						<th>공연 종류</th>
 						<td>
@@ -71,10 +81,10 @@
 					<tr>
 						<th>주소</th>
 						<td colspan="3">
-							<input type="text" id="performanceZipcode" name="performanceZipcode" size="5">
+							<input type="text" id="performanceZipcode" name="performanceZipcode" size="15">
 							<input type="button" id="searchZipBtn" name="searchZipBtn" value="우편 번호 찾기"><br>
-							<input type="text" id="performanceAddress" name="performanceAddress" placeholder="주소 입력" size="70"><br>
-							<input type="text" id="performanceDetailaddress" name="performanceDetailAddress" placeholder="상세 주소 입력" size="70">
+							<input type="text" id="performanceAddress" name="performanceAddress" placeholder="주소 입력" size="50"><br>
+							<input type="text" id="performanceDetailaddress" name="performanceDetailAddress" placeholder="상세 주소 입력" size="50">
 						</td>
 					</tr>
 					<tr>

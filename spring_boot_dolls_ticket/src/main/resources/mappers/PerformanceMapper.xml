@@ -63,9 +63,31 @@
 	<delete id="deletePerformance" parameterType="string">
 		DELETE FROM PERFORMANCE_INFO_M WHERE PERFORMANCE_ID = #{performanceId}
 	</delete>
-	<!-- 공연 정보 등록 -->
-	<insert id="insertPerformance" parameterType="com.spring_boot_dolls_ticket.project.model.PerformanceVO">
-		INSERT INTO PERFORMANCE_INFO_M (PERFORMANCE_KIND_CD, PERFORMANCE_RATING_CODE, PERFORMANCE_NAME, PERFORMANCE_PRICE_R, PERFORMANCE_PRICE_S, PERFORMANCE_ZIPCODE, PERFORMANCE_ADDRESS, PERFORMANCE_DETAILADDRESS, PERFORMANCE_DATE1, PERFORMANCE_DATE2, PERFORMANCE_TIME, RESERVATION_OPEN_EXPECTED_DATE, FIRST_CHANGE_DATE, LAST_CHANGE_DATE) VALUES (#{performanceKindCd}, #{performanceRatingCode}, #{performanceName}, #{performancePriceR}, #{performancePriceS}, #{performanceZipcode}, #{performanceAddress}, #{performanceDetailAddress}, #{performanceDate1}, #{performanceDate2}, #{performanceTime}, #{reservationOpenExpectedDate}, SYSDATE, SYSDATE)
+	<!-- 공연 정보 삽입 구문 -->
+	<insert id="insertPerformance" parameterType="com.spring_boot_dolls_ticket.project.model.PerformanceVO" useGeneratedKeys="true" keyProperty="performanceId">
+	    INSERT INTO PERFORMANCE_INFO_M (
+	        PERFORMANCE_KIND_CD, PERFORMANCE_RATING_CODE, PERFORMANCE_NAME,
+	        PERFORMANCE_PRICE_R, PERFORMANCE_PRICE_S, PERFORMANCE_ZIPCODE, PERFORMANCE_ADDRESS,
+	        PERFORMANCE_DETAILADDRESS, PERFORMANCE_DATE1, PERFORMANCE_DATE2, PERFORMANCE_TIME,
+	        RESERVATION_OPEN_EXPECTED_DATE, FIRST_CHANGE_DATE, LAST_CHANGE_DATE
+	    ) VALUES (
+	        #{performanceKindCd}, #{performanceRatingCode}, #{performanceName},
+	        #{performancePriceR}, #{performancePriceS}, #{performanceZipcode}, #{performanceAddress},
+	        #{performanceDetailAddress}, #{performanceDate1}, #{performanceDate2}, #{performanceTime},
+	        #{reservationOpenExpectedDate}, SYSDATE, SYSDATE
+	    )
 	</insert>
+	<select id="selectGeneratedId" resultType="string">
+	    SELECT PERFORMANCE_ID 
+	    FROM PERFORMANCE_INFO_M 
+	    WHERE ROWID = (SELECT MAX(ROWID) FROM PERFORMANCE_INFO_M)
+	</select>
+	<!-- 이미지 경로 업데이트 구문 -->
+	<update id="updateImgPath" parameterType="com.spring_boot_dolls_ticket.project.model.PerformanceVO">
+	    UPDATE PERFORMANCE_INFO_M
+	    SET PERFORMANCE_IMAGE_PATH = #{performanceImagePath},
+	        PERFORMANCE_INFORMATION_IMAGE_PATH = #{performanceInformationImagePath}
+	    WHERE PERFORMANCE_ID = #{performanceId}
+	</update>
 	<!-- INSERT INTO PERFORMANCE_INFO_M (PERFORMANCE_ID, PERFORMANCE_KIND_CD, PERFORMANCE_RATING_CODE, PERFORMANCE_NAME, PERFORMANCE_PRICE_R, PERFORMANCE_PRICE_S, PERFORMANCE_ZIPCODE, PERFORMANCE_ADDRESS, PERFORMANCE_DETAILADDRESS, PERFORMANCE_DATE1, PERFORMANCE_DATE2, PERFORMANCE_TIME, RESERVATION_OPEN_EXPECTED_DATE, PERFORMANCE_IMAGE_PATH, PERFORMANCE_INFORMATION_IMAGE_PATH, FIRST_CHANGE_DATE, LAST_CHANGE_DATE) VALUES (#{performanceId}, #{performanceKindCd}, #{performanceRatingCode}, #{performanceName}, #{performancePriceR}, #{performancePriceS}, #{performanceZipcode}, #{performanceAddress}, #{performanceDetailAddress}, #{performanceDate1}, #{performanceDate2}, #{performanceTime}, #{reservationOpenExpectedDate}, #{performanceImagePath}, #{performanceInformationImagePath}, #{firstChangeDate}, #{lastChangeDate} -->
 </mapper>

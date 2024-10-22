@@ -8,11 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer{
 
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// 프로젝트 외부 경로 이미지 맵핑 설정
-		// 맵핑 이름 : prd_images
-		registry.addResourceHandler("/prd_images/**")
-				.addResourceLocations("file:///C:/springBootWorkspace/product_images/");
-	}
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/ticket_images/**").addResourceLocations("file:///Users/dlwlgus/springBootWorkspace/ticket_images/");
+		registry.addResourceHandler("/image/**").addResourceLocations("file:///Users/dlwlgus/springBootWorkspace/upload/"); // 한 개 절대 경로에 여러 url 매핑 가능
+    }
 	
 }
