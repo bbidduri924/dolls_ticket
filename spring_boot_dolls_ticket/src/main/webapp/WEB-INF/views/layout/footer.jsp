@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <footer>
 	<div id="footerMenuBox">
 		<ul id="footerMenuItem">
@@ -12,8 +14,8 @@
 		</ul>
 	</div>
 	<div id="companyInfo">
-		<div>
-			<span id="siteName">FIVE DOLLS</span>
+		<div id="siteName">
+			<span>FIVE DOLLS</span>
 		</div>
 		<div id="info">
 			<b>파이브 돌스(주)</b><br>
@@ -24,5 +26,8 @@
 			통신 판매업 신고 : 제1234-5678호&nbsp;&nbsp;<a href="">사업자 정보 확인 > </a><br>
 			<b>Copyright © 파이브돌스 Corp. All Rights Reserved. </b><br>
 		</div>
+	</div>
+	<div class="goTop">
+		<a id="topBtn"><img src="<c:url value='/image/icons8-arrow-100.png'/>"></a>
 	</div>
 </footer>

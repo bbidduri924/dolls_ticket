@@ -45,3 +45,15 @@ footer a:hover {
 	justify-content: space-between;
 }
 #siteName { font-size: 80px; }
+
+.goTop a {
+    position: fixed;
+    bottom: 270px;
+    right: 40px;
+    z-index: 999;
+    cursor: pointer;
+}
+.goTop a.on{
+  cursor: pointer;
+  bottom: 0;
+}

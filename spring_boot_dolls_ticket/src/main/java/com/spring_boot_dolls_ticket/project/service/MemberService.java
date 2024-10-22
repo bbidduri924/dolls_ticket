@@ -111,7 +111,22 @@ public class MemberService implements IMemberService {
 	    // 업데이트된 행의 수가 1 이상이면 성공, 그렇지 않으면 실패
 	    return rowsAffected > 0;
 	}
-	
+
+	@Override
+	public MemberVO selectCustInfo(String custId) {
+		// TODO Auto-generated method stub
+		return dao.selectCustInfo(custId);
+	}
+
+	@Override
+	public void updateMember(MemberVO in) {
+		// TODO Auto-generated method stub
+		dao.updateMember(in);
+	}
+
+
+
+
 	
 	
 

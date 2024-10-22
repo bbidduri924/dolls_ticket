@@ -9,250 +9,237 @@
 		<title>concert page</title>
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/body.css'/>">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/concert.css'/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/footer.css'/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/font5.css'/>">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 		<script src="<c:url value='/js/jquery-3.7.1.min.js'/>"></script>
 		<script src="<c:url value='/js/body.js'/>"></script>
 	</head>
 	<body>
+	<div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0001'/>"><img src="<c:url value='/image/c_banner1.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">2024 나훈아 콘서트</p>
+						<p class="slide-detail">2024.12.14 ~ 2024.12.15</p>
+				</div></a>
+		  </div>
+			<div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0005'/>"><img src="<c:url value='/image/c_banner2.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">2024 NE-YO 콘서트</p>
+						<p class="slide-detail">2024.11.16 ~ 2024.11.17</p>
+				</div></a>
+		  </div>
+			<div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0004'/>"><img src="<c:url value='/image/c_banner3.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">2024 적재 콘서트</p>
+						<p class="slide-detail">2024.11.09 ~ 2024.11.10</p>
+				</div></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0006'/>"><img src="<c:url value='/image/c_banner4.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">2024 이찬원 콘서트</p>
+						<p class="slide-detail">2024.12.14 ~ 2024.12.15</p>
+				</div></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0007'/>"><img src="<c:url value='/image/c_banner5.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">2024 송골매 콘서트</p>
+						<p class="slide-detail">2024.11.16 ~ 2024.11.17</p>
+				</div></a>
+			</div>
+	      <div class="swiper-slide">
+				<a href="<c:url value='/performance/detailViewPerformance/P0008'/>"><img src="<c:url value='/image/c_banner6.jfif'/>">
+				<div class="slide-txt">
+						<p class="slide-tit">박진영 30주년 콘서트〈Still JYP〉</p>
+						<p class="slide-detail">2024.12.28 ~ 2024.12.29</p>
+				</div></a>
+			</div>
+	    </div>
+  	</div>
+  	
+	<h1>NOW OPEN</h1>
+		<table id="initialTable">
+			<tr>
+				<td class="ranking">
+					<div class="info">
+					<a href="<c:url value='/performance/detailViewPerformance/P0001'/>"><img src="<c:url value='/image/P0001.jpg'/>">
+						<div class="info-txt">
+						<p class="info-txt1">나훈아 ‘2024 고마웠습니다-라스트 콘서트(LAST CONCERT)’</p>
+						<p class="info-txt2">올림픽홀</p>
+						</div></a>
+				</div>
+			</td>
+				<td class="ranking">
+					<div class="info">				
+						<a href="<c:url value='/performance/detailViewPerformance/P0002'/>"><img src="<c:url value='/image/P0002.PNG'/>">
+							<div class="info-txt">
+							<p class="info-txt1">랑랑 피아노 리사이틀</p>
+							<p class="info-txt2">샤롯데씨어터</p>
+							</div></a>			
+					</div>	
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0005'/>"><img src="<c:url value='/image/P0005.PNG'/>">
+							<div class="info-txt">
+							<p class="info-txt1">NE-YO Champagne & Roses Tour in SEOUL</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>							
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0007'/>"><img src="<c:url value='/image/P0007.jpg'/>">
+							<div class="info-txt">
+							<p class="info-txt1">2024 송골매 콘서트 ‘열망’ 두번째 [늘-봄]</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>						
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0006'/>"><img src="<c:url value='/image/P0006.jpg'/>">
+							<div class="info-txt">
+							<p class="info-txt1">2024 이찬원 콘서트 ‘ 찬가（燦歌）’</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>								
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">				
+						<a href="<c:url value='/performance/detailViewPerformance/P0004'/>"><img src="<c:url value='/image/P0004.PNG'/>">
+							<div class="info-txt">
+							<p class="info-txt1">2024 적재 전국투어 콘서트 〈CLICHE〉</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>							
+					</div>	
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0003'/>"><img src="<c:url value='/image/P0003.PNG'/>">
+							<div class="info-txt">
+							<p class="info-txt1">데이비드 내한공연 (d4vd - My House Is Not A Home Tour)</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>						
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0008'/>"><img src="<c:url value='/image/P0008.PNG'/>">
+							<div class="info-txt">
+							<p class="info-txt1">박진영 30주년 콘서트〈Still JYP〉</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>									
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="banner">
+				<a href="<c:url value='/performance/detailViewPerformance/P0017'/>"><img src="<c:url value='/image/long_banner.png'/>"></a>
+		</div>
+		<h1>TICKET COMING SOON</h1>
+		<table id="initialTable">
+			<tr>
+				<td class="ranking">
+					<div class="info">
+					<a href="<c:url value='/performance/detailViewPerformance/P0001'/>"><img src="<c:url value='/image/P0001.jpg'/>">
+						<div class="donut-dday">D-16</div>
+						<div class="info-txt">
+						<p class="info-txt1">나훈아 ‘2024 고마웠습니다-라스트 콘서트(LAST CONCERT)’</p>
+						<p class="info-txt2">올림픽홀</p>
+						</div></a>
+				</div>
+			</td>
+				<td class="ranking">
+					<div class="info">				
+						<a href="<c:url value='/performance/detailViewPerformance/P0002'/>"><img src="<c:url value='/image/P0002.PNG'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">랑랑 피아노 리사이틀</p>
+							<p class="info-txt2">샤롯데씨어터</p>
+							</div></a>			
+					</div>	
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0005'/>"><img src="<c:url value='/image/P0005.PNG'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">NE-YO Champagne & Roses Tour in SEOUL</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>							
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0007'/>"><img src="<c:url value='/image/P0007.jpg'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">2024 송골매 콘서트 ‘열망’ 두번째 [늘-봄]</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>						
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0006'/>"><img src="<c:url value='/image/P0006.jpg'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">2024 이찬원 콘서트 ‘ 찬가（燦歌）’</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>								
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">				
+						<a href="<c:url value='/performance/detailViewPerformance/P0004'/>"><img src="<c:url value='/image/P0004.PNG'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">2024 적재 전국투어 콘서트 〈CLICHE〉</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>							
+					</div>	
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0003'/>"><img src="<c:url value='/image/P0003.PNG'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">데이비드 내한공연 (d4vd - My House Is Not A Home Tour)</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>						
+					</div>
+				</td>
+				<td class="ranking">
+					<div class="info">
+						<a href="<c:url value='/performance/detailViewPerformance/P0008'/>"><img src="<c:url value='/image/P0008.PNG'/>">
+							<div class="donut-dday">D-16</div>
+							<div class="info-txt">
+							<p class="info-txt1">박진영 30주년 콘서트〈Still JYP〉</p>
+							<p class="info-txt2">올림픽홀</p>
+							</div></a>									
+					</div>
+				</td>
+			</tr>
+		</table>
 
-	<div id="wrapper">
-		<div>
-			<h1>RANKING</h1>
-		
-			<table id="initialTable">
-				<tr>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='/performance/detailViewPerformance/P0001'/>"><img src="<c:url value='/image/superjunior0001.PNG'/>">
-								<div class="textinfo">
-									<span>슈퍼주니어<br>
-										  <br>
-										  2024.11.14~2024.11.15<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-									</span>
-								</div>
-							</a>						
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">				
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/langlang0002.PNG'/>">
-								<div class="textinfo">
-									<span>랑랑<br>
-										  <br>
-										  2024.11.16~2024.11.18<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>						
-						</div>	
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/neo0003.PNG'/>">
-								<div class="textinfo">
-									<span>neo<br>
-										  <br>
-										  2024.11.18~2024.11.20<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/onerepublic0004.PNG'/>">
-								<div class="textinfo">
-									<span>OneRepublic<br>
-										  <br>
-										  2024.11.20~2024.11.22<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-				</tr>
-				
-				<tr>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/youngtak0005.PNG'/>">
-								<div class="textinfo">
-									<span>영탁<br>
-										  <br>
-										  2024.12.01~2024.12.03<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-									</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">				
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/jukjae0006.PNG'/>">
-								<div class="textinfo">
-									<span>적재<br>
-										  <br>
-										  2024.12.03~2024.12.05<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>	
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/david0007.PNG'/>">
-								<div class="textinfo">
-									<span>David<br>
-										  <br>
-										  2024.12.05~2024.12.07<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>								
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/waves0008.PNG'/>">
-								<div class="textinfo">
-									<span>waves<br>
-										  <br>
-										  2024.12.07~2024.12.10<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>								
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<div id="box2">
-			<h1>TICKET COMING SOON</h1>
-			<div class="empty"></div>
-			<table>
-				<tr>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/christmas0017.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.11.14(목) 18:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/dualipa0018.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.11.16(토) 17:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/god0019.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.11.17(일) 20:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/growth0020.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.11.22(금) 18:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-				</tr>
-				
-				<tr>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/laundry0021.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.11.30(토) 14:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/leemoonsae0022.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.12.07(토) 20:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/santa0023.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.12.21(토) 17:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/urban0024.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.12.23(월) 13:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="empty2"></div>
-	</div>
-	<c:import url="/WEB-INF/views/layout/footer.jsp"/>
-	
+	<div class="empty2"></div>
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="<c:url value='/js/swiper.js'/>"></script>
+	<c:import url="/WEB-INF/views/layout/footer.jsp"/>	
 	</body>
 </html>
  		
