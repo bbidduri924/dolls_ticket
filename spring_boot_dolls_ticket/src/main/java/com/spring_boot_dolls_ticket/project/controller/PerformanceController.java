@@ -37,8 +37,8 @@ public class PerformanceController {
 		return "performance/performanceDetail";
 	}
 
-	@RequestMapping("/performance/writeReview") 
-	public String writeReview(ReviewVO vo, HttpSession session, HttpServletRequest request) {
+	@RequestMapping("/performance/insertReview") 
+	public String insertReview(ReviewVO vo, HttpSession session, HttpServletRequest request) {
 	    // 세션에서 사용자 ID 가져오기
 	    String custId = (String) session.getAttribute("sid");
 	    vo.setCustId(custId); 
@@ -53,6 +53,6 @@ public class PerformanceController {
 		vo.setPerformanceId(request.getParameter("performanceId"));
 	    rvService.deleteReview(reviewSeq); // 리뷰 삭제 처리
 	    return "redirect:/performance/detailViewPerformance/"+vo.getPerformanceId();
-	    }
+	}
 
 }

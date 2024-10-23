@@ -147,7 +147,7 @@
 				</div>
 				<c:if test="${pfm.performanceKindCd eq 'M'}">
 					<p class="dt05-tit">관람후기</p>
-					<form id="reviewForm" name="reviewForm" method="post" action="<c:url value='/performance/writeReview'/>">
+					<form id="reviewForm" name="reviewForm" method="post" action="<c:url value='/performance/insertReview'/>">
 						<input type="hidden" id="performanceId" name="performanceId" value="${pfm.performanceId}">
 						<div class="write">
 							<c:if test="${sessionScope.sid == null}">
@@ -233,7 +233,7 @@
 								href=""><span>5</span></a><a href=""><span>6</span></a><a href=""><span>7</span></a><a
 								href=""><span>8</span></a><a href=""><span>9</span></a><a href=""><span>10</span></a>
 						</div>
-						<a href="" class="list-page-last"><imgbsrc="<c:url value='/image/icons8-arrow-20_2.png'/>"></a>
+						<a href="" class="list-page-last"><img src="<c:url value='/image/icons8-arrow-20_2.png'/>"></a>
 						</div>
 					</div>
 				</c:if>

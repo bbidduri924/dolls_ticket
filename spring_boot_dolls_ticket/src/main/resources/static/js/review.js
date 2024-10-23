@@ -70,8 +70,8 @@ $(document).on('click', '#insertReview', function(e){
         return;
     }
     
-    $('#reviewForm').submit();
-   	alert("후기를 성공적으로 등록했습니다.");
+	$('#reviewForm').submit();
+	   	alert("후기를 성공적으로 등록했습니다.");
 });
 
 
