@@ -13,7 +13,7 @@ $(document).ready(function() {
             const reader = new FileReader();
             reader.onload = function(e) {
                 $('#posterPreview').attr('src', e.target.result).show();
-                $('.deleteImageBtn').show();
+                $('#deletePosterBtn').show();
             };
             reader.readAsDataURL(file);
         }
@@ -24,7 +24,7 @@ $(document).ready(function() {
             const reader = new FileReader();
             reader.onload = function(e) {
                 $('#infoPreview').attr('src', e.target.result).show();
-                $('.deleteImageBtn').show();
+                $('#deleteInfoBtn').show();
             };
             reader.readAsDataURL(file);
         }
@@ -68,6 +68,7 @@ $(document).ready(function() {
             processData: false,
             success: function(response) {
                 alert('공연 정보가 등록되었습니다.');
+                window.location.href = "/admin/performanceList";
             },
             error: function(xhr, status, error) {
                 alert('업로드 실패: ' + xhr.responseText);

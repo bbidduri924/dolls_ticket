@@ -8,7 +8,7 @@
 	<body>
 		<div class="navbar">
 			<div style="width:20%; text-align: center;" class="mainLogo">
-				<a href="/">FiveDolls</a>
+				<a href="/admin">FiveDolls</a>
 			</div>
 	        <!-- Center: Musical and Concert Categories -->
 	        <div style="width:60%; text-align: center;" class="categories">

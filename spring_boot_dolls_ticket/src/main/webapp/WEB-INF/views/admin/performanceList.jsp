@@ -13,8 +13,10 @@
 	<body>
 		<div class="wrapper">
 			<div>
-				<h3>공연 관리</h3>
-				<button class="newPerformance" onclick="location.href='/admin/newPerformanceForm'">신규 공연 등록</button>
+				<div class="header">
+	                <h3>공연 관리</h3>
+	                <button class="newPerformance" onclick="location.href='/admin/newPerformanceForm'">신규 공연 등록</button>
+            	</div>
 				<table class="listTable"">
 					<thead>
 						<tr>

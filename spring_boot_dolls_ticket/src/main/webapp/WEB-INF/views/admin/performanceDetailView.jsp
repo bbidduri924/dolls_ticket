@@ -20,68 +20,71 @@
 		</script>
 	</head>
 	<body>
-		<div class="wrapper">
-				<p><a>${peformance.performanceKindCd}</a></p>
-				<p>${performance.performanceName}</p>
+		<div class="detailWrapper">
+			<div>
+				<h3>${performance.performanceName}</h3>
 				<p>등록일 : <fmt:formatDate value="${performance.firstChangeDate}" pattern="yyyy-MM-dd"/></p>
 				<p>마지막 수정일 : <fmt:formatDate value="${performance.lastChangeDate}" pattern="yyyy-MM-dd"/></p>
+			</div>
+			<div id="content">	
 				<div class="poster">
-					<img src="<c:url value='/image/${performance.performanceImagePath}'/>">
+					<img src="<c:url value='/image/${performance.performanceId}.jpg'/>">
 				</div>
-				<table class="listTable">
-					<tr>
-						<th>공연 ID</th>
-						<td>${performance.performanceId}</td>
-					</tr>
-					<tr>
-						<th>공연 이름</th>
-						<td>${performance.performanceName}</td>
-					</tr>
-					<tr>
-						<th>공연 종류</th>
-						<td>${performance.performanceKindCd}</td>
-					</tr>
-					<tr>
-						<th>공연 일시1</th>
-						<td><fmt:formatDate value="${performance.performanceDate1}" pattern="yyyy-MM-dd"/></td>
-					</tr>
-					<tr>
-						<th>공연 일시2</th>
-						<td><fmt:formatDate value="${performance.performanceDate2}" pattern="yyyy-MM-dd"/></td>
-					</tr>
-					<tr>
-						<th>R석 가격</th>
-						<td>${performance.performancePriceR}원</td>
-					</tr>
-					<tr>
-						<th>S석 가격</th>
-						<td>${performance.performancePriceS}원</td>
-					</tr>
-					<tr>
-						<th>관람 등급</th>
-						<td>${performance.performanceRatingCode}세 이상</td>
-					</tr>
-					<tr>
-						<th>관람 시간</th>
-						<td>총 ${performance.performanceTime}분</td>
-					</tr>
-					<tr>
-						<th>주소</th>
-						<td colspan="3">
-							우편 번호 : ${performance.performanceZipcode}<br>
-							주소 : ${performance.performanceAddress}<br>
-							상세 주소 : ${performance.performanceDetailAddress}<br>
-						</td>
-					</tr>
-					<tr>
-						<th>티켓 오픈 일자</th>
-						<td><fmt:formatDate value="${performance.reservationOpenExpectedDate}" pattern="yyyy-MM-dd"/></td>
-					</tr>
-				</table>
-				<div>
+				<div class="detailTableWrap">
+					<table class="detailTable">
+						<tr>
+							<th>공연 ID</th>
+							<td>${performance.performanceId}</td>
+						</tr>
+						<tr>
+							<th>공연 이름</th>
+							<td>${performance.performanceName}</td>
+						</tr>
+						<tr>
+							<th>공연 종류</th>
+							<td>${performance.performanceKindCd}</td>
+						</tr>
+						<tr>
+							<th>공연 일시1</th>
+							<td><fmt:formatDate value="${performance.performanceDate1}" pattern="yyyy-MM-dd"/></td>
+						</tr>
+						<tr>
+							<th>공연 일시2</th>
+							<td><fmt:formatDate value="${performance.performanceDate2}" pattern="yyyy-MM-dd"/></td>
+						</tr>
+						<tr>
+							<th>R석 가격</th>
+							<td>${performance.performancePriceR}원</td>
+						</tr>
+						<tr>
+							<th>S석 가격</th>
+							<td>${performance.performancePriceS}원</td>
+						</tr>
+						<tr>
+							<th>관람 등급</th>
+							<td>${performance.performanceRatingCode}세 이상</td>
+						</tr>
+						<tr>
+							<th>관람 시간</th>
+							<td>총 ${performance.performanceTime}분</td>
+						</tr>
+						<tr>
+							<th>주소</th>
+							<td colspan="3">
+								우편 번호 : ${performance.performanceZipcode}<br>
+								주소 : ${performance.performanceAddress}<br>
+								상세 주소 : ${performance.performanceDetailAddress}<br>
+							</td>
+						</tr>
+						<tr>
+							<th>티켓 오픈 일자</th>
+							<td><fmt:formatDate value="${performance.reservationOpenExpectedDate}" pattern="yyyy-MM-dd"/></td>
+						</tr>
+					</table>
 					<button class="updateBtn" onclick="updatePerformance();">수정</button>
 					<button class="deleteBtn" onclick="deleteCheck();">삭제</button>
 				</div>
+			</div>
 			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 		</div>
 	</body>

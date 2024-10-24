@@ -34,7 +34,7 @@
 						<td>
 							<img id="posterPreview" alt="포스터 미리 보기" style="display:none; max-width: 300px; margin-top: 10px;"><br>
 							<input type="file" name="performancePoster" id="performancePoster"><br>
-							<button type="button" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
+							<button type="button" id="deletePosterBtn" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
 						</td>
 					</tr>
 					<tr>
@@ -42,7 +42,7 @@
 						<td>
 							<img id="infoPreview" alt="정보 이미지 미리 보기" style="display:none; max-width: 300px; margin-top: 10px;"><br>
 							<input type="file" name="performanceInfoImg" id="performanceInfoImg"><br>
-							<button type="button" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
+							<button type="button" id="deleteInfoBtn" class="deleteImageBtn" style="display:none; margin-top: 10px;">삭제</button>
 						</td>
 					</tr>
 					<tr>

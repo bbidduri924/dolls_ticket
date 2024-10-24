@@ -31,7 +31,7 @@
 					<tr>
 	                    <th>공연 포스터</th>
 	                    <td>
-	                        <img id="posterPreview" src="<c:url value='/image/${performance.performanceId}.jpg'/>" 
+	                        <img id="posterPreview" src="<c:url value='/image/${performance.performanceImagePath}'/>" 
 	                             alt="포스터 미리 보기" style="max-width: 300px; display: block;">
 	                        <input type="file" name="performancePoster" id="performancePoster">
 	                        <button type="button" class="deleteImageBtn">삭제</button>
@@ -40,7 +40,7 @@
 	                <tr>
 	                    <th>공연 정보 이미지</th>
 	                    <td>
-	                        <img id="infoPreview" src="<c:url value='/image/${performance.performanceId}_info.jpg'/>" 
+	                        <img id="infoPreview" src="<c:url value='/image/${performance.performanceInformationImagePath}'/>" 
 	                             alt="정보 이미지 미리 보기" style="max-width: 300px; display: block;">
 	                        <input type="file" name="performanceInfoImg" id="performanceInfoImg">
 	                        <button type="button" class="deleteImageBtn">삭제</button>

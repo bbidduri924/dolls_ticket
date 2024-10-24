@@ -59,6 +59,7 @@ $(document).ready(function() {
             contentType: false, 
             success: function(response) {
                 alert('공연 정보가 수정되었습니다.');
+                window.location.href = "/admin/performanceList";
             },
             error: function(xhr, status, error) {
                 // 오류 처리
