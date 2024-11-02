@@ -5,7 +5,34 @@
 
 
 	<div id="wrapper">
-		<div>
+		<article  id="slideShow"> <!-- 슬라이드 쇼 -->   	
+	        <!-- 이전/다음 버튼 -->
+			<div id="prevNextButtonBox">
+				<img id="prevButton" src="image/prevButton.png">
+				<img id="nextButton" src="image/nextButton.png">
+			</div>	
+			<div id="slideShowBox">
+				<div id="slidePanel">
+					<a href="<c:url value='/performance/detailViewPerformance/P0004'/>">
+					<img src= "<c:url value='/image/banner1.png'/>" class="slideImage"></a>
+					<a href="<c:url value='/performance/detailViewPerformance/P0013'/>">
+					<img src= "<c:url value='/image/banner2.jfif'/>" class="slideImage"></a>
+					<a href="<c:url value='/performance/detailViewPerformance/P0001'/>">
+					<img src= "<c:url value='/image/banner3.jfif'/>" class="slideImage"></a>
+					<a href="<c:url value='/performance/detailViewPerformance/P0010'/>">
+					<img src= "<c:url value='/image/banner4.jfif'/>" class="slideImage"></a>
+					<a href="<c:url value='/performance/detailViewPerformance/P0015'/>">
+					<img src= "<c:url value='/image/banner5.png'/>" class="slideImage"></a>
+				</div>
+			</div> <!-- slideShowBox 끝 -->  
+			<div id = "controlPanel">
+				<img src="image/controlButton1.png" class="controlButton">
+				<img src="image/controlButton1.png" class="controlButton">
+				<img src="image/controlButton1.png" class="controlButton">
+				<img src="image/controlButton1.png" class="controlButton">
+				<img src="image/controlButton1.png" class="controlButton">
+			</div>	
+	    </article>
 			<h1>RANKING</h1>
 			<div class='bTab'>
 				<div class="hashtag"><span class='active' data='#initialTable'>#콘서트</span></div>
@@ -14,129 +41,28 @@
 				
 			<table id="initialTable">
 				<tr>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/superjunior0001.PNG'/>">
-								<div class="textinfo">
-									<span>슈퍼주니어<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-									</span>
-								</div>
-							</a>						
-						</div>
-					</td>
+				<c:forEach items="${consertOpenList}" var="consertOpen" varStatus="status">
+				<c:if test="${status.index % 4 == 0}">
+		            <tr>
+		        </c:if>
 					<td class="ranking">
 						<div class="info">				
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/langlang0002.PNG'/>">
+							<a href="/performance/detailViewPerformance/${consertOpen.performanceId}"><img src="/image/<c:out value="${consertOpen.performanceImagePath}"/>"
+		                     alt="${consertOpen.performanceImagePath}">
 								<div class="textinfo">
-									<span>랑랑<br>
+									<span>${consertOpen.performanceName}<br>
 										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
+										  <fmt:formatDate value="${consertOpen.minPerformanceDate}" pattern="yyyy.MM.dd"/> ~ <fmt:formatDate value="${consertOpen.maxPerformanceDate}" pattern="yyyy.MM.dd"/><br>
+										  ${consertOpen.performanceAddress}<br>${consertOpen.performanceDetailAddress}
 								 	</span>
 								</div>
 							</a>						
 						</div>	
 					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/neo0003.PNG'/>">
-								<div class="textinfo">
-									<span>neo<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/onerepublic0004.PNG'/>">
-								<div class="textinfo">
-									<span>OneRepublic<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-				</tr>
-				
-				<tr>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/youngtak0005.PNG'/>">
-								<div class="textinfo">
-									<span>영탁<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-									</span>
-								</div>
-							</a>							
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">				
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/jyp0006.PNG'/>">
-								<div class="textinfo">
-									<span>JYP<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>							
-						</div>	
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/david0007.PNG'/>">
-								<div class="textinfo">
-									<span>David<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>								
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="info">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/waves0008.PNG'/>">
-								<div class="textinfo">
-									<span>waves<br>
-										  <br>
-										  2024.09.26~2024.09.27<br>
-										  올림픽홀<br>
-										  <br>
-										  관람연령 15세이상<br>
-								 	</span>
-								</div>
-							</a>								
-						</div>
-					</td>
+				    <c:if test="${(status.index + 1) % 4 == 0}">
+			            </tr>
+			        </c:if>
+				</c:forEach>
 				</tr>
 			</table>
 		</div>
@@ -144,232 +70,58 @@
 		<div id="dynamicTable" style="display:none;">
       		<table>
 			<tr>
+			<c:forEach items="${performanceOpenList}" var="performanceOpen" varStatus="status">
+				<c:if test="${status.index % 4 == 0}">
+		            <tr>
+		        </c:if>
 				<td class="ranking">
 					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/aladdin0009.PNG'/>">
+						<a href="/performance/detailViewPerformance/${performanceOpen.performanceId}"><img src="../<c:out value="${performanceOpen.performanceImagePath}"/>"
+		                     alt="${performanceOpen.performanceImagePath}">
 							<div class="textinfo">
-								<span>뮤지컬 알라딘<br>
+								<span>${performanceOpen.performanceName}<br>
 									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
+									  <fmt:formatDate value="${performanceOpen.minPerformanceDate}" pattern="yyyy.MM.dd"/> ~ <fmt:formatDate value="${performanceOpen.maxPerformanceDate}" pattern="yyyy.MM.dd"/><br>
+									  ${performanceOpen.performanceAddress}<br>${performanceOpen.performanceDetailAddress}
 								</span>	  
 							</div>
 						</a>	
 					</div>
 				</td>
-				<td class="ranking">
-					<div class="info">				
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/house0010.PNG'/>">
-							<div class="textinfo">
-								<span>쿠로이 저택엔 누가 살고 있을까?<br>
-									  <br>	
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-								</span>
-							</div>
-						</a>	
-					</div>	
-				</td>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/gentleman0011.PNG'/>">
-							<div class="textinfo">
-								<span>젠틀맨'스 가이드<br>
-								      <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-								</span>	  
-							</div>
-						</a>	
-					</div>
-				</td>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/eternity0012.PNG'/>">
-							<div class="textinfo">
-								<span>ETERNITY<br>
-									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-							 	</span>
-							</div>	 	
-						</a>	
-					</div>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/long0013.PNG'/>">
-							<div class="textinfo">
-								<span>긴긴밤<br>
-									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-								</span>		
-							</div>
-						</a>	
-					</div>					
-				</td>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/swing0014.PNG'/>">
-							<div class="textinfo">
-								<span>스윙 데이즈_암호명 A<br>
-									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-							  	</span>
-							</div>
-						</a>	
-					</div>					
-				</td>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/town0015.PNG'/>">
-							<div class="textinfo">
-								<span>하데스타운<br>
-									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-								</span>	  
-							</div>
-						</a>	
-					</div>					
-				</td>
-				<td class="ranking">
-					<div class="info">
-						<a href="<c:url value='#'/>"><img src="<c:url value='/image/boots0016.PNG'/>">
-							<div class="textinfo">
-								<span>Kinky Boots<br>
-									  <br>
-									  2024.09.26~2024.09.27<br>
-									  올림픽홀<br>
-									  <br>
-									  관람연령 15세이상<br>
-								</span>	  
-							</div>
-						</a>	
-					</div>					
-				</td>
+				<c:if test="${(status.index + 1) % 4 == 0}">
+			         </tr>
+			    </c:if>
+			</c:forEach>	
 			</tr>
 			</table>	
 		</div> <!--dynamicTable 끝  -->
-		
+		<div class="banner">
+			<a href="<c:url value='/performance/detailViewPerformance/P0017'/>"><img src="<c:url value='/image/long_banner.png'/>"></a>
+		</div>
 		<div id="box2">
 			<h1>TICKET COMING SOON</h1>
 			<div class="empty"></div>
 			<table>
 				<tr>
+				<c:forEach items="${performanceOpenExpectedList}" var="performanceOpenExpected" varStatus="status">
+				<c:if test="${status.index % 4 == 0}">
+		            <tr>
+		        </c:if>
 					<td class="ranking">
 						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/christmas0017.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.01(화) 13:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
+							<a href="/performance/detailView/${performanceOpenExpected.performanceId}"><img src="../<c:out value="${performanceOpenExpected.performanceImagePath}"/>"
+		                     alt="${performanceOpenExpected.performanceImagePath}">
+								<div class="donut-dday">D-16</div>
+								<div class="info-txt">
+									<p class="info-txt1">${performanceOpenExpected.performanceName}</p>
+									<p class="info-txt2"><fmt:formatDate value="${performanceOpenExpected.minPerformanceDate}" pattern="yyyy.MM.dd"/> ~ <fmt:formatDate value="${performanceOpenExpected.maxPerformanceDate}" pattern="yyyy.MM.dd"/></p>
+								</div></a>
 						</div>
 					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/dualipa0018.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.02(수) 17:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/god0019.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.03(목) 20:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/growth0020.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.04(금) 18:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-				</tr>
-				
-				<tr>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/laundry0021.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.05(토) 14:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/leemoonsae0022.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.10.06(일) 20:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/santa0023.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.12.01(일) 17:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
-					<td class="ranking">
-						<div class="infocoming">
-							<a href="<c:url value='#'/>"><img src="<c:url value='/image/urban0024.PNG'/>">
-								<div class="textcoming">
-									<span>
-										2024.12.02(월) 13:00 OPEN<br>								
-									</span>
-								</div>
-							</a>
-						</div>
-					</td>
+				</c:forEach>	
 				</tr>
 			</table>
 		</div>
 		<div class="empty2"></div>
-	</div>
+		
  		

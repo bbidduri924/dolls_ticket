@@ -7,15 +7,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/login.css" rel="stylesheet" type="text/css">
+<link href="/css/font3.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="/js/kakaoLogin.js"></script>
 <script src="/js/common.js"></script>
-<script src="/js/jquery-3.7.1.min.js"></script>
 <script src="/js/login.js"></script>
 </head>
 <body>
 	
   <div class="form-container sign-in-container">
     <form id="loginForm" name="loginForm" >
-      <a href="/"><h1>Five Dolls</h1></a>
+      <a href="/" class="logo">FiveDolls</a>
       <!-- <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -26,17 +29,27 @@
       	<input type="text" id="signupId" placeholder="아이디" />
       	<input type="password" id="signupPwd" placeholder="비밀번호" />
       </div>
+      <div id=loginbox>
+      	<button type="submit">로그인</button>
+      </div>
       <div id="finemenu">
       	<a href="<c:url value='/member/privacyPolicy'/>">회원가입</a>
       	<a href="<c:url value='/member/searchId'/>">아이디 찾기</a>
       	<a href="/member/searchPwd">비밀번호 찾기</a>
       </div>
       <div id="social">
-      	<a href=""><img src= "../images/naverlogin.png"></a>
-      	<a href=""><img src= "../images/kakaologin.png"></a>
-      </div>
-      <div id=loginbox>
-      	<button type="submit">로그인</button>
+      	<a href="/naver/oauth" id="naverLoginBtn">
+      		<img src= "../image/naverlogin.png">
+      	</a>
+      	<a href="/kakao/oauth" id="kakaoLoginBtn">
+    		<img src="../image/kakaologin.png" alt="카카오 로그인">
+		</a>
+      </div> 
+      
+      
+      <!-- kakaoInfo 변수를 숨겨진 요소로 추가 -->
+      <div style="display:none;">
+          <span id="kakaoInfo">${kakaoInfo}</span>
       </div>
       
     </form>
