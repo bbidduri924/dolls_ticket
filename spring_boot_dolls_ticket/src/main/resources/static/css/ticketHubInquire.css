@@ -27,17 +27,26 @@ body {
    margin-bottom:200px;
 }
 
+h1 {
+    margin-top:40px;
+    font-size:50px;
+}
+
+h4 {
+    font-size:25px;	
+}
+
 #status {
 	margin-top:120px;
 	width:100%;
 	text-align:left;
 	font-size:18px;
 	font-weight:bold;
-	margin-left:500px;
+	margin-left:550px;
 }
 
 #hit {
-	margin-left:770px;
+	margin-left:900px;
 	font-weight:normal;
 	font-size:18px;
 }
@@ -76,7 +85,7 @@ th, td {
 td,th div {
 	padding:3px;
 	border-bottom:1px solid lightgray;
-	font-size:18px;
+	font-size:20px;
 	box-sizing: border-box;
 	text-align:left;
 }
@@ -85,7 +94,7 @@ td,th div {
     display:flex;            
     justify-content:center; 
     align-items:stretch;   
-    width:320px;
+    width:370px;
     margin-top:60px;       
 }
 
@@ -105,7 +114,7 @@ td,th div {
     justify-content:center;   
     background-color:#20B2AA;
     border-radius:10px;
-    padding:11px;
+    padding:10px;
     margin-left:0px;
     color:white;
 }
@@ -120,12 +129,11 @@ td,th div {
 .receiveBtn span {
     font-size:25px;
     font-weight:bold;
-    padding:13px;
-    margin-top:3px;
+    padding:15px;
 }
 
 .total-price {
-    font-size:20px;
+    font-size:22px;
     font-weight:bold;
 }
 
@@ -212,23 +220,6 @@ td,th div {
     text-decoration:none;
     cursor:pointer;
 }
-
-.transfer-progress {
-	background-color:#6c8f5e;
-	color:white;
-	border-radius:15px;
-	padding:5px 10px;
-	font-weight:normal;
-}
-
-.transfer-completed {
-	background-color:#b0b0b0;
-	color:white;
-	border-radius:15px;
-	padding:5px 10px;
-	font-weight:normal;
-}
-
 
 .banner {
     background-color: #f3e8d2;
