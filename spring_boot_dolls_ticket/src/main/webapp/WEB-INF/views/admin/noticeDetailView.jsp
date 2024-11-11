@@ -27,7 +27,7 @@
 				<p>마지막 수정일 : <fmt:formatDate value="${notice.lastChangeDate}" pattern="yyyy년 MM월 dd일"/></p>
 			</div>
 			<div id="content">	
-				<div id="noticeTableWrap">
+				<div class="detailTableWrap">
 					<table class="detailTable">
 						<tr>
 							<th>공지 제목</th>

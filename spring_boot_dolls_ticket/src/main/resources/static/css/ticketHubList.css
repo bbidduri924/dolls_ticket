@@ -30,7 +30,7 @@ body {
 table {
    border-collapse:collapse;
    width:100%;
-   font-size:20px;
+   font-size:22px;
 }
 
 th, td {
@@ -49,7 +49,7 @@ h4 {
 }
 
 #fillout {
-	margin-left:820px;
+	margin-left:900px;
 	margin-top:150px;
 	cursor:pointer;
 }
@@ -59,7 +59,7 @@ h4 {
 }
 
 #fillout span {
-	font-size:20px;
+	font-size:25px;
 	font-weight:bold;
 	border:2px solid #20B2AA;
 	border-radius:5px;

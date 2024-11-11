@@ -17,9 +17,9 @@ public class MemberVO {
 	private String custAddress;
 	private String custDetailAddress;
 	private String custStatus;
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date firstChangeDate;
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date lastChangeDate;
 	  
 	public MemberVO() {}

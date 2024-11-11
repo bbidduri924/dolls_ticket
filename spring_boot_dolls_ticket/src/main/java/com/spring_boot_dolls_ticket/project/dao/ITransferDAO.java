@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring_boot_dolls_ticket.project.model.AssignmentNoticeBoardVO;
 import com.spring_boot_dolls_ticket.project.model.AssignmentOrderDetailVO;
@@ -36,8 +35,5 @@ public interface ITransferDAO {
 	public int updateSuccess(AssignmentOrderVO orderVo);
 	public List<AssignmentTicketVO> selectSoldYn(String orderNo);
 	public int updateAlreadySold(AssignmentOrderVO orderVo);
-	public List<AssignmentOrderVO> selectListAssignmentOrder(String receiveCustId);
-	public List<AssignmentOrderDetailVO> selectListAssignmentOrderDetail(String orderNo);
-	public AssignmentOrderVO selectAssignmentOrder(@Param("receiveCustId") String receiveCustId, @Param("orderNo") String orderNo);
-	public int updateAssignmentStatus(String noticeId);
+	
 } 
